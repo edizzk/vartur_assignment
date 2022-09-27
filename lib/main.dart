@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const MyHomePage(title: 'Vartur Assignment'),
+        home: const MyHomePage(title: 'Vartur Assignment', selectedIndex: 0),
       ),
     );
   }
