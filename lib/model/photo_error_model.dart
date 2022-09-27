@@ -9,7 +9,7 @@ class PhotoError {
   });
 
   int? code;
-  Object? message;
+  String? message;
 
   factory PhotoError.fromJson(Map<String, dynamic> json) => PhotoError(
     code: json["code"],
