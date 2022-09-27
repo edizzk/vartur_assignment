@@ -9,19 +9,25 @@ import '../../widget/bottom_nav_bar.dart';
 import '../../widget/failure_box.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title, required this.selectedIndex});
+  const MyHomePage({super.key, required this.title});
 
   final String title;
-  final int selectedIndex;
+  final String bottomNavText2 = "Search Screen";
+  final String bottomNavText3 = "My Account Screen";
 
   @override
   Widget build(BuildContext context) {
     PhotoViewModel photoViewModel = context.watch<PhotoViewModel>();
+    final tabs = [
+      _ui(photoViewModel),
+      Center(child: Text(bottomNavText2)),
+      Center(child: Text(bottomNavText3)),
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(title: Text(title), centerTitle: true),
-      body: _ui(photoViewModel),
-      bottomNavigationBar: bottomNavBar(context, selectedIndex),
+      body: tabs[photoViewModel.selectedIndex],
+      bottomNavigationBar: bottomNavBar(context, photoViewModel),
     );
   }
 
