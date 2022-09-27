@@ -29,10 +29,10 @@ class PhotoDetailView extends StatelessWidget {
       children: [
         const SizedBox(height: 50),
         _imageBox(),
-        const SizedBox(height: 75, width: 320),
+        const SizedBox(height: 75),
         Padding(
-          padding: const EdgeInsets.only(right: 50, left: 50),
-          child: Text(photoModel.title, textAlign: TextAlign.center, style: const TextStyle(fontSize: 20)),
+          padding: const EdgeInsets.only(right: 30, left: 30),
+          child: Text(photoModel.title, textAlign: TextAlign.center, style: const TextStyle(fontSize: 16)),
         ),
         const SizedBox(height: 50),
       ],
