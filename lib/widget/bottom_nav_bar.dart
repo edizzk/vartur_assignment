@@ -10,14 +10,7 @@ Widget bottomNavBar(BuildContext context, int selectedIndex) {
   const String bottomNav3 = "My Account";
 
   void changeView(int index) {
-    switch(index) {
-      case 0 :
-        return openVarturView(context, 0);
-      case 1:
-        return openSearchView(context, 1);
-      case 2:
-        return openMyAccountView(context, 2);
-    }
+    photoViewModel.setSelectedIndex(index);
   }
 
   return GNav(
