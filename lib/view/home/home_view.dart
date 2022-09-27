@@ -9,8 +9,9 @@ import '../../widget/app_loading.dart';
 import '../../widget/failure_box.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({super.key, required this.title});
 
+  final String title;
   final String bottomNav1 = "Vartur";
   final String bottomNav2 = "Search";
   final String bottomNav3 = "My Account";
@@ -20,7 +21,7 @@ class MyHomePage extends StatelessWidget {
     PhotoViewModel photoViewModel = context.watch<PhotoViewModel>();
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(),
+      appBar: AppBar(title: Text(title), centerTitle: true),
       body: _ui(photoViewModel),
       bottomNavigationBar: GNav(
         backgroundColor: Theme.of(context).bottomAppBarColor,

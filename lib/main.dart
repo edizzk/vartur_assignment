@@ -18,12 +18,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => PhotoViewModel()),
       ],
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Vartur Assignment',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         debugShowCheckedModeBanner: false,
-        home: const MyHomePage(),
+        home: const MyHomePage(title: 'Vartur Assignment'),
       ),
     );
   }
