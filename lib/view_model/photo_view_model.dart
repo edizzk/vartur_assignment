@@ -10,13 +10,20 @@ class PhotoViewModel extends ChangeNotifier {
   List<PhotoModel> _photoList = [];
   bool _isLoading = false;
   PhotoError? _photoError;
+  int _selectedIndex = 0;
 
   bool get isLoading => _isLoading;
   List<PhotoModel> get photoList => _photoList;
   PhotoError? get photoError => _photoError;
+  int get selectedIndex => _selectedIndex;
 
   PhotoViewModel() {
     getPhotos();
+  }
+
+  setSelectedIndex(int index) {
+    _selectedIndex = index;
+    notifyListeners();
   }
 
   setLoading(bool loading) async {
