@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:vartur_assignment/view_model/photo_view_model.dart';
 
-import '../service/navigator.dart';
-
-Widget bottomNavBar(BuildContext context, int selectedIndex) {
+Widget bottomNavBar(BuildContext context, PhotoViewModel photoViewModel) {
 
   const String bottomNav1 = "Vartur";
   const String bottomNav2 = "Search";
@@ -17,7 +16,7 @@ Widget bottomNavBar(BuildContext context, int selectedIndex) {
     backgroundColor: Theme.of(context).bottomAppBarColor,
     tabBackgroundColor: Colors.grey.shade300,
     gap: 10,
-    selectedIndex: selectedIndex,
+    selectedIndex: photoViewModel.selectedIndex,
     padding: const EdgeInsets.all(20),
     onTabChange: (index) => changeView(index),
     tabs: const [
