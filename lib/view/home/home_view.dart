@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 import '../../model/photo_model.dart';
 import '../../view/home/photo_card.dart';
 import '../../view_model/photo_view_model.dart';
 import '../../widget/app_loading.dart';
+import '../../widget/bottom_nav_bar.dart';
 import '../../widget/failure_box.dart';
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
+  const MyHomePage({super.key, required this.title, required this.selectedIndex});
 
   final String title;
-  final String bottomNav1 = "Vartur";
-  final String bottomNav2 = "Search";
-  final String bottomNav3 = "My Account";
+  final int selectedIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -23,18 +21,7 @@ class MyHomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(title: Text(title), centerTitle: true),
       body: _ui(photoViewModel),
-      bottomNavigationBar: GNav(
-        backgroundColor: Theme.of(context).bottomAppBarColor,
-        tabBackgroundColor: Colors.grey.shade300,
-        gap: 10,
-        padding: const EdgeInsets.all(20),
-        onTabChange: (index) {},
-        tabs: [
-          GButton(icon: Icons.home, text: bottomNav1),
-          GButton(icon: Icons.search, text: bottomNav2),
-          GButton(icon: Icons.person, text: bottomNav3)
-        ],
-      ),
+      bottomNavigationBar: bottomNavBar(context, selectedIndex),
     );
   }
 
