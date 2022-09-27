@@ -17,6 +17,8 @@ class PhotoRepository{
       return Failure(code: USER_INVALID_RESPONSE, errorResponse: 'Invalid Response');
     } on HttpException{
       return Failure(code: NO_INTERNET, errorResponse: 'No Internet Connection');
+    } on SocketException{
+      return Failure(code: NO_INTERNET, errorResponse: 'No Internet Connection');
     } on FormatException {
       return Failure(code: INVALID_FORMAT, errorResponse: 'Invalid Format');
     } catch (e) {
