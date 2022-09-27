@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../model/photo_model.dart';
+import '../../service/navigator.dart';
 
-Widget photoCard(PhotoModel photoModel) {
-  debugPrint(photoModel.url);
+Widget photoCard(BuildContext context, PhotoModel photoModel) {
   return Padding(
     padding: const EdgeInsets.only(right: 50, left: 50, bottom: 20, top: 20),
     child: Card(
@@ -13,7 +13,7 @@ Widget photoCard(PhotoModel photoModel) {
         borderRadius: BorderRadius.circular(10)
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () => openDetailsView(context, photoModel),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
