@@ -49,7 +49,7 @@ class MyHomePage extends StatelessWidget {
     return ListView.separated(
       itemBuilder: (context, index) {
         PhotoModel photoModel = photoViewModel.photoList[index];
-        return photoCard(photoModel);
+        return photoCard(context, photoModel);
       },
       separatorBuilder: (context, index) =>
           const Divider(thickness: 1, color: Colors.black54),
